@@ -11,7 +11,7 @@ const Createpage = () => {
   const [gender, setGender] = useState("");
   const [birthday, setBirthday] = useState("");
   const [image, setImage] = useState("");
-  const [userdata, setUserData] = useState(null);
+  const [userData, setUserData] = useState(null);
 
 
 
@@ -38,6 +38,10 @@ const Createpage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+      if (!firstname || !lastname || !gender || !birthday || !image) {
+    alert("Please fill in all fields.");
+    return;
+  }
     // console.log(firstname, lastname, gender, birthday, image);
     //   await Axios.post("http://localhost:3000/users", {
     //     firstname,
@@ -63,7 +67,7 @@ const Createpage = () => {
         await Axios.post("http://localhost:3000/users", userData);
       }
       navigate("/");
-      console.log(userData);
+      // console.log(userData);
     } catch (error) {
       console.log(error);
     }
@@ -75,6 +79,7 @@ const Createpage = () => {
     setGender("");
     setBirthday("");
     setImage("");
+
   };
 
   const handleUpload = async (e) => {

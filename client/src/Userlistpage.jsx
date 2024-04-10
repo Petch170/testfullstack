@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./component/Navbar";
-import Userlist from "./component/Userlist";
+// import Userlist from "./component/Userlist";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import Axios from "axios";
 import { FiSearch } from "react-icons/fi";
